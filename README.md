@@ -1,5 +1,10 @@
 # Kotlin Please Animate
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-KotlinPleaseAnimate-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6837)
+[![CircleCI](https://circleci.com/gh/florent37/KotlinPleaseAnimate/tree/master.svg?style=svg)](https://circleci.com/gh/florent37/NoActivityResult/tree/master)
+[![Language](https://img.shields.io/badge/language-kotlin-brightgreen.svg)](https://www.github.com/florent37/KotlinPleaseAnimate)
+
+
 `Kotlin, please, can you animate my views ?`
 
 A Kotlin way to declare and run beautiful animations ! 
@@ -14,8 +19,8 @@ Please be gentle with Kotlin :)
 ```kotlin
 please {
    animate(avatar) toBe {
-      bottomOfHisParent(marginDp = 36f)
-      leftOfHisParent(marginDp = 16f)
+      bottomOfItsParent(marginDp = 36f)
+      leftOfItsParent(marginDp = 16f)
       width(40, keepRatio = true, toDp = true)
    }
 }.start()
@@ -27,7 +32,7 @@ please {
 
 In your module [![Download](https://api.bintray.com/packages/florent37/maven/KotlinPleaseAnimate/images/download.svg)](https://bintray.com/florent37/maven/KotlinPleaseAnimate/_latestVersion)
 ```groovy
-compile 'com.github.florent37:kotlinpleaseanimate:1.0.0'
+implementation 'com.github.florent37:kotlinpleaseanimate:1.0.2'
 ```
 
 This code describe the video above
@@ -35,8 +40,8 @@ This code describe the video above
 ```kotlin
 please(duration = 1500L) {
    animate(avatar) toBe {
-      bottomOfHisParent(marginDp = 36f)
-      leftOfHisParent(marginDp = 16f)
+      bottomOfItsParent(marginDp = 36f)
+      leftOfItsParent(marginDp = 16f)
       visible()
       width(40, keepRatio = true, toDp = true)
    }
@@ -51,13 +56,13 @@ please(duration = 1500L) {
       textColor(Color.WHITE)
    }
    animate(revert) toBe {
-      rightOfHisParent(marginDp = 4f)
-      bottomOfHisParent(marginDp = 12f)
+      rightOfItsParent(marginDp = 4f)
+      bottomOfItsParent(marginDp = 12f)
       backgroundAlpha(0f)
    }
    animate(start) toBe {
       aboveOf(revert, marginDp = 4f)
-      rightOfHisParent(marginDp = 4f)
+      rightOfItsParent(marginDp = 4f)
       backgroundAlpha(0f)
    }
    animate(bottomLayout) toBe {
@@ -81,8 +86,8 @@ Exemple with a scrollview
 ```kotlin
 val animation = please {
         animate(avatar) toBe {
-           topOfHisParent(marginDp = 20f)
-           leftOfHisParent(marginDp = 20f)
+           topOfItsParent(marginDp = 20f)
+           leftOfItsParent(marginDp = 20f)
            scale(0.5f, 0.5f)
         }
 
@@ -94,7 +99,7 @@ val animation = please {
         }
 
         animate(revert) toBe {
-           rightOfHisParent(marginDp = 20f)
+           rightOfItsParent(marginDp = 20f)
            sameCenterVerticalAs(avatar)
         }
 
@@ -167,10 +172,10 @@ please {
      centerBetweenViews(view1, view2, horizontal, vertical)
      centerBetweenViewAndParent(otherView, horizontal, vertical, toBeOnRight, toBeOnBottom)
 
-     topOfHisParent()
-     rightOfHisParent()
-     bottomOfHisParent()
-     leftOfHisParent()
+     topOfItsParent()
+     rightOfItsParent()
+     bottomOfItsParent()
+     leftOfItsParent()
 
      alignBottom(otherView, marginDp=)
      alignTop(otherView)
@@ -184,6 +189,8 @@ please {
      visible()
      invisible()
 
+     custom(object: CustomAnimExpectation(){ ... })
+
      originalScale()
 
      scale(scaleX, scaleY)
@@ -193,7 +200,18 @@ please {
      sameWidthAs(otherView)
      sameHeightAs(otherView)
 
+     marginTop(margin)
+     marginBottom(margin)
+     marginRight(margin)
+     marginLeft(margin)
+
+     paddingTop(padding)
+     paddingBottom(padding)
+     paddingRight(padding)
+     paddingLeft(padding)
+
      textColor(textColor)
+     textSize(textSize)
      backgroundAlpha(alpha)
 
      rotated(rotation)

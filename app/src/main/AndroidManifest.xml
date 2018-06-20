@@ -22,6 +22,9 @@
         <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimFlipActivity"/>
         <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimAlphaActivity" />
         <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimConcatActivity" />
+        <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimCustomActivity" />
+        <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimMarginActivity" />
+        <activity android:name="com.github.florent37.kotlin.pleaseanimate.sample.AnimPaddingActivity" />
     </application>
 
 </manifest>

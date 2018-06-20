@@ -65,4 +65,29 @@
         android:textColor="@android:color/white"
         app:backgroundTint="@color/colorPrimary"
         android:text="Chain" />
+
+    <Button
+        android:id="@+id/custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        android:text="Custom" />
+
+    <Button
+        android:id="@+id/margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        android:text="Margin" />
+
+    <Button
+        android:id="@+id/padding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        android:text="Padding" />
+
 </LinearLayout>
